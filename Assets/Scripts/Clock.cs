@@ -9,6 +9,10 @@ namespace WallClock.Core
         [SerializeField] private GameObject m_MinutesHand;
         [SerializeField] private GameObject m_HoursHand;
 
+        [Header("Hands Models Sets")]
+        [SerializeField] private Transform[] m_minutesModels;
+        [SerializeField] private Transform[] m_hoursModels;
+
         //every 6 degrees in unity = 1 minute (same as seconds)
         private const int c_degreesPerMinute = 6;
 
@@ -18,6 +22,8 @@ namespace WallClock.Core
         private float m_minutes;
         private float m_hours;
         private float m_seconds;
+
+        private int randomIndexSet;
        
 
         private void Start()
@@ -66,6 +72,8 @@ namespace WallClock.Core
 
         private void InitClock()
         {
+            ActivateRandomModelsSet();
+
             m_minutes = DateTime.Now.Minute;
             m_hours = DateTime.Now.Hour;
             m_seconds = DateTime.Now.Second;
@@ -74,6 +82,13 @@ namespace WallClock.Core
             m_HoursHand.transform.localRotation = Quaternion.Euler(0f, m_hours * c_degreesPerHour, 0f);
         }
 
+        //Exercise 4 addition
+        private void ActivateRandomModelsSet()
+        {
+            randomIndexSet = UnityEngine.Random.Range(0, 3);
+            m_minutesModels[randomIndexSet].gameObject.SetActive(true);
+            m_hoursModels[randomIndexSet].gameObject.SetActive(true);
+        }
     }
 }
 
