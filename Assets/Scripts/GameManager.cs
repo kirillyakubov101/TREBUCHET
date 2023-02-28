@@ -1,7 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+
 namespace WallClock.Core
 {
     public class GameManager : MonoBehaviour
@@ -27,11 +26,15 @@ namespace WallClock.Core
         {
             for (int i = 0; i < m_clockToCreateAtStart; i++)
             {
-                Clock instance = Instantiate(m_ClockPrefab, m_StartPosition, Quaternion.identity);
-                m_cinemachineTarget.AddMember(instance.transform, 1f, c_TargetGroupRadius);
-
-                m_StartPosition.x += m_offsetX;
+                CreateAdditionalClock();
             }
+        }
+
+        public void CreateAdditionalClock()
+        {
+            Clock instance = Instantiate(m_ClockPrefab, m_StartPosition, Quaternion.identity);
+            m_cinemachineTarget.AddMember(instance.transform, 1f, c_TargetGroupRadius);
+            m_StartPosition.x += m_offsetX;
         }
     }
 
