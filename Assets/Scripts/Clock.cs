@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 
-namespace WallClock
+namespace WallClock.Core
 {
     public class Clock : MonoBehaviour
     {
