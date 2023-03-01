@@ -297,6 +297,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b6227863506c534a9f7ce7bb7380769, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_timeSourceMethod: 2
+  m_computerTimeSource: {fileID: 11400000, guid: a7483d93972ce7e4597a4a3a155fc47b, type: 2}
+  m_elapsedTimeSource: {fileID: 11400000, guid: 46723daafc380e14893277c995094157, type: 2}
+  m_staticTimeSource: {fileID: 11400000, guid: 212a76b5ae0895e4b953bff8c05b0d36, type: 2}
   m_MinutesHand: {fileID: 2623705781271273720}
   m_HoursHand: {fileID: 2623705780278156913}
   m_minutesModels:

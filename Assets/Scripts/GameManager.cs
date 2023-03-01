@@ -14,7 +14,7 @@ namespace WallClock.Core
         [SerializeField] private CinemachineTargetGroup m_cinemachineTarget;
 
         private Vector3 m_StartPosition = Vector3.zero;
-        private const float c_TargetGroupRadius = 2f;
+        private const float c_TargetGroupRadius = 10f;
       
 
         private void Start()

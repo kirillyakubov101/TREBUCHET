@@ -347,7 +347,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ClockPrefab: {fileID: 4425257307234344403, guid: b9e56f453770d9d4cbe1775ea47e6465, type: 3}
-  m_clockToCreateAtStart: 4
+  m_clockToCreateAtStart: 1
   m_offsetX: 25
   m_cinemachineTarget: {fileID: 1518137310}
 --- !u!114 &1413423090
