@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: StaticTimeSource
   m_EditorClassIdentifier: 
   m_overrideSeconds: 50
-  m_overrideMinutes: 45
+  m_overrideMinutes: 10
   m_overrideHours: 2

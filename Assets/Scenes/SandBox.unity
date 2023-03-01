@@ -312,6 +312,7 @@ GameObject:
   - component: {fileID: 1413423088}
   - component: {fileID: 1413423089}
   - component: {fileID: 1413423090}
+  - component: {fileID: 1413423091}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -347,7 +348,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ClockPrefab: {fileID: 4425257307234344403, guid: b9e56f453770d9d4cbe1775ea47e6465, type: 3}
-  m_clockToCreateAtStart: 1
+  m_clockToCreateAtStart: 5
   m_offsetX: 25
   m_cinemachineTarget: {fileID: 1518137310}
 --- !u!114 &1413423090
@@ -389,6 +390,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1413423091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1413423087}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80bb63cf29274a04db330b13e2c85e3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1518137309
 GameObject:
   m_ObjectHideFlags: 0

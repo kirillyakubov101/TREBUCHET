@@ -1,5 +1,6 @@
 using UnityEngine;
 using Cinemachine;
+using WallClock.Debugs;
 
 namespace WallClock.Core
 {
@@ -15,11 +16,19 @@ namespace WallClock.Core
 
         private Vector3 m_StartPosition = Vector3.zero;
         private const float c_TargetGroupRadius = 10f;
-      
+
+        private DebugCatcher m_debugCatcher;
+
+        private void Awake()
+        {
+            m_debugCatcher = GetComponent<DebugCatcher>();
+        }
 
         private void Start()
         {
             CreateClocks();
+
+            m_debugCatcher.enabled = true; //enable the debug catcher to sub to the Clock event
         }
 
         private void CreateClocks()

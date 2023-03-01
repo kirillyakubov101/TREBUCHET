@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace WallClock.Core
 {
@@ -18,6 +19,10 @@ namespace WallClock.Core
         [Header("Hands Models Sets")]
         [SerializeField] private Transform[] m_minutesModels;
         [SerializeField] private Transform[] m_hoursModels;
+
+
+        public static UnityEvent OnMinutePassHour = new UnityEvent();
+        
 
         //the way to get the time source
         private TimeSource m_currentTimeSource = null;
@@ -62,7 +67,11 @@ namespace WallClock.Core
         private void UpdateMinutes()
         {
             m_minutes++;
-            if(m_minutes >= 60)
+
+            //event fire when minute hand passes the hour
+            if (IsMinPassHour()){ Clock.OnMinutePassHour?.Invoke(); }
+
+            if (m_minutes >= 60)
             {
                 m_minutes = 0f;
                 UpdateHours();
@@ -139,7 +148,13 @@ namespace WallClock.Core
 
             m_currentTimeSource.InitValues();
 
+        }
 
+        private bool IsMinPassHour()
+        {
+            float hourToMinConvertion = m_hours * 5;
+
+            return m_minutes > hourToMinConvertion;
         }
     }
 }
